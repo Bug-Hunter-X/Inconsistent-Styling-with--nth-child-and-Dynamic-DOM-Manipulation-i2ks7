@@ -1,0 +1,16 @@
+The CSS rule `:nth-child(n)` is used to style elements based on their position within a parent container. However, it's prone to unexpected behavior when combined with dynamically added or removed elements.  Consider this scenario:
+
+```html
+<ul>
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+</ul>
+```
+
+```css
+ul li:nth-child(odd) { background-color: lightblue; }
+ul li:nth-child(even) { background-color: lightcoral; }
+```
+
+If you later add another list item using JavaScript, the `:nth-child` selector might not re-evaluate correctly, leading to inconsistent styling.  The added item might inherit the style of the previous item, regardless of its actual position.

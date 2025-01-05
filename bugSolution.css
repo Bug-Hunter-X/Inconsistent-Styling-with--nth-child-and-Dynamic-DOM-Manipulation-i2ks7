@@ -1,0 +1,20 @@
+Instead of relying on `:nth-child`, use JavaScript to add or remove classes dynamically.
+
+```javascript
+const listItems = document.querySelectorAll('ul li');
+
+listItems.forEach((item, index) => {
+  if (index % 2 === 0) {
+    item.classList.add('odd');
+  } else {
+    item.classList.add('even');
+  }
+});
+```
+
+```css
+ul li.odd { background-color: lightblue; }
+ul li.even { background-color: lightcoral; }
+```
+
+This approach provides more control and ensures consistent styling even after DOM manipulation.  Add or remove list items, and the styling will update correctly.
